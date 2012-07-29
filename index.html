@@ -1,0 +1,37 @@
+<!-- Brainfunk - a JavaScript brainfuck interpreter with breakpoint support -->
+<!-- 2012, Jean-Karim Bockstael <jkb@jkbockstael.be> -->
+<html>
+<head>
+	<script type="text/javascript" src="brainfunk.js"></script>
+	<!-- TODO style this shit -->
+</head>
+<body>
+	<form id="brainfunk-container">
+		<textarea id="brainfunk-program" name="brainfunk-program"></textarea><label for="brainfunk-program">Program</label><br />
+		<textarea id="brainfunk-output" name="brainfunk-output"></textarea><label for="brainfunk-output">Output</label><br />
+		<textarea id="brainfunk-input" name="brainfunk-input"></textarea><label for="brainfunk-input">Input</label><br />
+		<button id="brainfunk-run" name="brainfunk-run" type="button">Run</button>
+		<button id="brainfunk-pause" name="brainfunk-pause" type="button">Pause</button>
+		<button id="brainfunk-resume" name="brainfunk-resume" type="button">Resume</button>
+	</form>
+	<script type="text/javascript">
+		var bf;
+		bf = brainfunk();
+		bf.setProgram("brainfunk-program");
+		bf.setOutput("brainfunk-output");
+		bf.setInput("brainfunk-input");
+		var start = function() {
+			bf.start();
+		}
+		var pause = function() {
+			bf.pause();
+		}
+		var resume = function() {
+			bf.resume();
+		}
+		document.getElementById("brainfunk-run").onclick=start;
+		document.getElementById("brainfunk-pause").onclick=pause;
+		document.getElementById("brainfunk-resume").onclick=resume;
+	</script>
+</body>
+</html>
