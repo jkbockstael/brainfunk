@@ -1,16 +1,16 @@
 // Brainfunk - a JavaScript brainfuck interpreter with breakpoint support
 // 2012, Jean-Karim Bockstael <jkb@jkbockstael.be>
 var brainfunk = function() {
-	var programtxt = undefined;
-	var output = undefined;
-	var input = undefined;
-	var program = undefined;
+	var programtxt;
+	var output;
+	var input;
+	var program;
 	var memory = [];
 	var memorysize = 30000;
 	var pointer = 0;
 	var counter = 0;
 	var inputcursor = 0;
-	var clock = undefined;
+	var clock;
 	var clockspeed = 0; // milliseconds
 	return {
 		setProgram: function(id) {
@@ -24,6 +24,7 @@ var brainfunk = function() {
 		},
 		start: function() {
 			program = programtxt.value;
+			var i;
 			for (i = 0; i < memorysize; i++) {
 				memory[i] = 0;
 			}
@@ -45,7 +46,7 @@ var brainfunk = function() {
 			clock = setInterval(this.step, clockspeed);
 		},
 		step: function() {
-			instruction = program[counter];
+			var instruction = program[counter];
 			switch (instruction) {
 				case ">":
 					pointer++;
@@ -54,10 +55,10 @@ var brainfunk = function() {
 					pointer--;
 					break;
 				case "+":
-					memory[pointer] = memory[pointer]+1;
+					memory[pointer] = memory[pointer] + 1;
 					break;
 				case "-":
-					memory[pointer] = memory[pointer]-1;
+					memory[pointer] = memory[pointer] - 1;
 					break;
 				case ".":
 					output.value += String.fromCharCode(memory[pointer]);
@@ -68,14 +69,14 @@ var brainfunk = function() {
 					break;
 				case "[":
 					if (memory[pointer] === 0) {
-						while (program[counter] != "]") {
+						while (program[counter] !== "]") {
 							counter++;
 						}
 					}
 					break;
 				case "]":
-					if (memory[pointer] != 0) {
-						while (program[counter] != "[") {
+					if (memory[pointer] !== 0) {
+						while (program[counter] !== "[") {
 							counter--;
 						}
 					}
@@ -85,10 +86,10 @@ var brainfunk = function() {
 					break;
 				// default: ignore
 			}
-			counter++
+			counter++;
 			if (program[counter] === undefined) {
 				stop();
 			}
 		}
-	}
+	};
 };

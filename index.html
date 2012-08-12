@@ -1,18 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <!-- Brainfunk - a JavaScript brainfuck interpreter with breakpoint support -->
 <!-- 2012, Jean-Karim Bockstael <jkb@jkbockstael.be> -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<title>Brainfunk</title>
 	<script type="text/javascript" src="brainfunk.js"></script>
 	<!-- TODO style this shit -->
 </head>
 <body>
-	<form id="brainfunk-container">
-		<textarea id="brainfunk-program" name="brainfunk-program"></textarea><label for="brainfunk-program">Program</label><br />
-		<textarea id="brainfunk-output" name="brainfunk-output"></textarea><label for="brainfunk-output">Output</label><br />
-		<textarea id="brainfunk-input" name="brainfunk-input"></textarea><label for="brainfunk-input">Input</label><br />
-		<button id="brainfunk-run" name="brainfunk-run" type="button">Run</button>
-		<button id="brainfunk-pause" name="brainfunk-pause" type="button">Pause</button>
-		<button id="brainfunk-resume" name="brainfunk-resume" type="button">Resume</button>
+	<form id="brainfunk-container" action="#">
+		<div>
+			<textarea id="brainfunk-program" name="brainfunk-program" rows="25" cols="80"></textarea><label for="brainfunk-program">Program</label><br />
+			<textarea id="brainfunk-output" name="brainfunk-output" rows="5" cols="80"></textarea><label for="brainfunk-output">Output</label><br />
+			<textarea id="brainfunk-input" name="brainfunk-input" rows="5" cols="80"></textarea><label for="brainfunk-input">Input</label><br />
+			<button id="brainfunk-run" name="brainfunk-run" type="button">Run</button>
+			<button id="brainfunk-pause" name="brainfunk-pause" type="button">Pause</button>
+			<button id="brainfunk-resume" name="brainfunk-resume" type="button">Resume</button>
+		</div>
 	</form>
 	<script type="text/javascript">
 		var bf;
