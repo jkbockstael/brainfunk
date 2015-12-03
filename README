@@ -1,8 +1,19 @@
-Brainfunk - a JavaScript brainfuck interpreter with breakpoint support
-2012, Jean-Karim Bockstael <jkb@jkbockstael>
+# Brainfunk
 
-Brainfunk is a simple implentation of the brainfuck programming langage. I have added a basic breakpoint support for debug purpose, just insert '@' characters in the code where you want program execution to halt.
+## Description
 
-The source code should be clear enough for anyone to understand and modify, if it's not then deal with it.
+A simple JavaScript Brainfuck interpreter with breakpoint support.
+
+2012, Jean-Karim Bockstael <jkb@jkbockstael.be>
+
+## How to use
+
+Brainfunk is a simple implentation of the brainfuck programming langage. I have added a basic breakpoint support for debug purpose, just insert `@` characters in the code where you want program execution to halt.
+
+The source code should be clear enough for anyone to understand and modify, if it's not then feel free to PR me any improvement :)
 
 Enjoy!
+
+## Licence
+
+MIT, see LICENCE file
